@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Don't use</title>
+    <style>
+        
+        .code{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <ol>
+        <li>
+            
+                <code class="code">
+                    using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+namespace ConsoleApplication4
+{
+ class Program
+ {
+ static void Main(string[] args)
+ {Console.WriteLine("Os version is: " +
+Environment.OSVersion.ToString());
+Console.WriteLine("User domain name
+is:"+Environment.UserDomainName.ToString());
+Console.WriteLine("Machine name is" +
+Environment.MachineName.ToString());
+Console.WriteLine(" Timing is:" + Environment.TickCount);
+Console.WriteLine(" Username is" + Environment.UserName.ToString());
+Console.WriteLine(" ProcessCount is " +
+Environment.ProcessorCount.ToString());
+Console.WriteLine(" Current Directory is:" +
+Environment.CurrentDirectory.ToString());
+Console.ReadKey();
+ }
+ }
+}
+                </code>
+            
+            <button class="btn">cpoy</button>
+        </li>
+        <li>
+            <code class="code">
+                using System;
+public class Exercise7
+{
+ public static void Main()
+{
+ string str;
+ int alp, digit, splch, i,l;
+ alp = digit = splch = i = 0;
+ Console.Write("\n\nCount total number of alphabets, digits and
+special characters :\n");
+ Console.Write("-----------------------------------------------
+---------------------\n");
+ Console.Write("Input the string : ");
+ str = Console.ReadLine();
+ l=str.Length;
+ /* Checks each character of string*/
+ while(i<l)
+ {
+ if((str[i]>='a' && str[i]<='z') || (str[i]>='A' &&
+str[i]<='Z'))
+ {
+ alp++;
+ }
+ else if(str[i]>='0' && str[i]<='9')
+ {
+ digit++;
+ }
+ else
+ {
+ splch++;
+ }
+ i++;
+ }
+ Console.Write("Number of Alphabets in the string is : {0}\n",
+alp);
+ Console.Write("Number of Digits in the string is : {0}\n",
+digit);
+ Console.Write("Number of Special characters in the string is :
+{0}\n\n", splch);
+}
+}
+  
+            </code>
+            <button class="btn">cpoy</button>
+        </li>
+        <li>
+            <code class="code">
+                using System;
+ public class SumExample
+ {
+ public static void Main(string[] args)
+ {
+ int n,sum=0,m;
+ Console.Write("Enter a number: ");
+ n= int.Parse(Console.ReadLine());
+ while(n>0)
+ {
+ m=n%10;
+ sum=sum+m;
+ n=n/10;
+ }
+ Console.Write("Sum is= "+sum);
+ }
+} 
+
+
+</code>
+<button class="btn">cpoy</button>
+        </li>
+
+
+        <li>
+            <code class="code">
+                using System;
+                using System.Collections.Generic;
+                using System.Linq;
+                using System.Text;
+                namespace Inherit
+                {
+                 class inheri : vehicle
+                 {
+                 public void Noise()
+                 {
+                 Console.WriteLine("All Vehicles Creates Noise !! ");
+                 }
+                 static void Main(string[] args)
+                 {
+                 inheri obj = new inheri();
+                 obj.mode();
+                 obj.feature();
+                 obj.Noise();
+                 Console.Read();
+                 }
+                 }
+                 class Mode
+                 {
+                 public void mode()
+                 {
+                 Console.WriteLine("There are Many Modes of Transport !!");
+                 }
+                 }
+                 class vehicle : Mode
+                 {
+                 public void feature()
+                 {
+                 Console.WriteLine("They Mainly Help in Travelling !!");
+                 }
+                 }
+                }
+                
+
+            </code>
+            <button class="btn">cpoy</button>
+        </li>
+        <li>
+            <code class="code">
+                
+                
+                using System;
+class ExceptionDemo
+{
+ public static void Main()
+ {
+ int a = 3, b = 1, c;
+ try
+ {
+ c = a / b;
+ }
+ catch (ArithmeticException ae)
+ {
+ Console.WriteLine("Exception Divide by Zero\n\n" + ae);
+ }
+ try
+ {
+ int[] arr = new int[2];
+ arr[3] = 5;
+ }
+ catch (IndexOutOfRangeException iore)
+ {
+ Console.WriteLine("Array Index out of bounds Exception\n\n" + iore);
+ }
+ finally
+ {
+ Console.WriteLine("Finally block Executing...");
+Console.ReadLine();
+ }
+ }
+}
+            </code>
+            <button class="btn">cpoy</button>
+        </li>
+        <li>
+            <code class="code">
+               
+                using System;
+                using System.Collections.Generic;
+                using System.Linq;
+                using System.Text;
+                namespace ConsoleApplication4
+                {
+                class Program
+                {
+                static string[] a_num = new string[5];
+                static double[] amount = new double[5];
+                //checking
+                static int place(ref string a_n)
+                {
+                int p=0;
+                int flag=-1;
+                for (int i = 0; i < 5; i++)
+                {
+                if (a_n == a_num[i])
+                flag = i;
+                }
+                p = flag;
+                return p;
+                }
+                //for deposite
+                static void acc(ref string ac_no, ref double amt, ref int p)
+                {
+                    try
+{
+Console.WriteLine("");
+amount[p] = amount[p] + amt;
+Console.WriteLine("Account number: " + ac_no);
+Console.WriteLine("Deposited amount: " + amt);
+Console.WriteLine("Balance: " + amount[p]);
+Console.WriteLine("");
+}
+catch (Exception e)
+{
+}
+}
+//for withdraw
+static void acc(ref string ac_no, ref double amt,ref int p1,ref int a)
+{
+if (amount[p1] == 100||amt>=amount[p1])
+Console.WriteLine("Amount can not be withdrawn");
+else
+{
+amount[p1] = amount[p1] - amt;
+Console.WriteLine("Account number: " + ac_no);
+Console.WriteLine("Withdrawn amount: " + amt);
+Console.WriteLine("Balance: " + amount[p1]);
+Console.WriteLine("");
+}
+}
+//for transfer
+static void acc( ref double amt,ref int p1,ref int p2)
+{
+if (amount[p1] == 100 || amt >= amount[p1])
+Console.WriteLine("Amount can not be tranfered");
+else
+{
+amount[p2] = amount[p2] + amt;
+amount[p1] = amount[p1] - amt;
+Console.WriteLine("Account number: " + a_num[p1]);
+Console.WriteLine("Balance: " + amount[p1]);
+Console.WriteLine("");
+Console.WriteLine("Account number: " + a_num[p2]);
+Console.WriteLine("Balance: " + amount[p2]);
+Console.WriteLine("");
+}
+}
+//main
+static void Main(string[] args)
+{
+a_num[0] = "AB101"; a_num[1] = "AB102"; a_num[2] = "AB103";
+a_num[3] = "AB104"; a_num[4] = "AB105";
+for (int j = 0; j < 5; j++)
+amount[j] = 500;
+int ch,plc;
+char c = 'y';
+string acc_no1, acc_no2, acc_no;
+double amt;
+while (c == 'y' || c == 'Y')
+{
+Console.WriteLine("");
+Console.WriteLine("\t\tWELCOME TO Your BANK");
+Console.WriteLine("");
+Console.WriteLine("Enter your choice");
+Console.WriteLine("Enter (1) for deposite");
+Console.WriteLine("Enter (2) for withdraw");
+Console.WriteLine("Enter (3) for transfer");
+Console.WriteLine("Enter (4) for EXIT");
+Console.WriteLine("");
+Console.WriteLine("Choice:-");
+lab: ch = int.Parse(Console.ReadLine());
+if (ch == 1)
+{
+Console.WriteLine("Account number:- ");
+acc_no = Console.ReadLine();
+plc = place(ref acc_no);
+if (plc != -1)
+{
+    Console.WriteLine("Amount to be deposited:- ");
+amt = double.Parse(Console.ReadLine());
+acc(ref acc_no, ref amt, ref plc);
+}
+else
+Console.WriteLine("\tInvalid Account Number");
+}
+else if (ch == 2)
+{
+int x = 0;
+Console.WriteLine("Account number:- ");
+acc_no = Console.ReadLine();
+plc = place(ref acc_no);
+if (plc != -1)
+{
+Console.WriteLine("Amount to be withdraw:- ");
+amt = double.Parse(Console.ReadLine());
+acc(ref acc_no, ref amt, ref plc, ref x);
+}
+else
+Console.WriteLine("\tInvalid Account Number");
+}
+else if (ch == 3)
+{
+int pl1, pl2;
+Console.WriteLine("Sender Account number:- ");
+acc_no1 = Console.ReadLine();
+pl1 = place(ref acc_no1);
+Console.WriteLine("Reciever Account number:- ");
+acc_no2 = Console.ReadLine();
+pl2 = place(ref acc_no2);
+if (pl1 != -1&&pl2!=-1)
+{
+Console.WriteLine("Amount to be transfered:- ");
+amt = double.Parse(Console.ReadLine());
+acc(ref amt, ref pl1,ref pl2);
+}
+else
+Console.WriteLine("\tInvalid Account Number");
+}
+else if (ch == 4)
+{
+break;
+}
+else
+{
+Console.WriteLine("\tPlease enter correct choice");
+goto lab;
+}
+Console.WriteLine("Do you wish to continue?(Y/N) :");
+c = char.Parse(Console.ReadLine());
+}
+Console.WriteLine("\t\tTHANK YOU !");
+}
+}
+}
+
+               
+              
+            </code>
+            <button class="btn">cpoy</button>
+        </li>
+        <li>
+            <code class="code">
+                
+                using System;
+public class ComplexNum
+{
+ public int real;
+ public int imaginary;
+ public ComplexNum(int real, int imaginary)
+ {
+ this.real = real;
+ this.imaginary = imaginary;
+ }
+ // Syntax of Operator Overloading
+ public static ComplexNum operator +(ComplexNum n1, ComplexNum n2)
+ {
+ return new ComplexNum(n1.real + n2.real, n1.imaginary + n2.imaginary);
+ }
+ // Override the ToString method to display an complex number in the suitable format:
+ public override string ToString()
+ {
+ return (String.Format("{0} + {1}i", real, imaginary));
+ }
+ public static void Main()
+ {
+ ComplexNum cnum1 = new ComplexNum(4, 5);
+ ComplexNum cnum2 = new ComplexNum(5, 6);
+ // Add two Complex objects (num1 and num2) through the
+ ComplexNum addition = cnum1 + cnum2;
+ // Print the numbers
+ Console.WriteLine("First complex number: {0}", cnum1);
+ Console.WriteLine("Second complex number: {0}", cnum2);
+ Console.WriteLine("RESULT :The sum of the two numbers: {0}", addition);
+ // Hault the output screen
+ Console.Read();
+ }
+}
+            </code>
+            <button class="btn">cpoy</button>
+        </li>
+        <!-- <li>
+            <code class="code">
+              
+                file_path <- "C:/Users/91702/OneDrive/Desktop/test.txt"
+                write.table("Hi", file = file_path, sep = "\t", row.names = FALSE)
+                read_data <- read.table(file = file_path, header = TRUE, sep = "\t")
+                print(read_data)
+              
+            </code>
+            <button class="btn">cpoy</button>
+        </li>
+        <li>
+            <code class="code">
+                x <- c(1,2,3,4,5)
+y <- c(4,6,8,2, 10)
+plot(x, y, type="l", main="Line Chart Example", xlab="X-axis Label", ylab="Y-axis Label", col="red")
+data <- rnorm(1000) # Generating random data
+hist(data, main="Histogram Example", xlab="Value", ylab="Frequency", col="lightblue", border="black")
+x <- c(1, 2, 3, 4, 5)
+y <- c(2, 4, 6, 8, 10)
+plot(x, y, type="l", main="Line Chart Example", xlab="X-axis Label", ylab="Y-axis Label", col="red")
+slices <- c(10, 20, 15, 30, 25)
+labels <- c("A", "B", "C", "D", "E")
+pie(slices, labels, main="Pie Chart Example", col=rainbow(length(slices)))
+data <- c(12, 15, 18, 20, 22, 25, 30, 40, 50)
+boxplot(data, main="Box Plot Example", xlab="Data", col="green", border="black")
+x <- c(1, 2, 3, 4, 5)
+y <- c(2, 3, 1, 4, 5)
+plot(x, y, main="Scatterplot Example", xlab="X-axis Label", ylab="Y-axis Label", pch=19, col="blue")
+               
+             
+              
+            </code>
+            <button class="btn">cpoy</button>
+        </li>
+        <li>
+            <code class="code">
+
+
+                data(mtcars)
+                str(mtcars)
+                head(mtcars)
+                summary(mtcars)
+                average_mpg <- mean(mtcars$mpg)
+                cat("Average MPG:", average_mpg, "\n")
+                max_hp_car <- mtcars[which.max(mtcars$hp), "model"]
+                cat("Car model with the highest horsepower:", max_hp_car, "\n")
+                mtcars$efficiency <- mtcars$mpg / mtcars$cyl
+                head(mtcars)
+                plot(mtcars$hp, mtcars$efficiency, xlab = "Horsepower", ylab = "Efficiency", main = "Fuel Efficiency vs. Horsepower")   
+             
+              
+            </code>
+            <button class="btn">cpoy</button>
+        </li>
+        <li>
+            <code class="code">
+
+                data(mtcars)
+                model <- lm(mpg ~ hp, data = mtcars)
+                summary(model)
+                plot(mtcars$hp, mtcars$mpg, xlab = "Horsepower", ylab = "MPG", main = "Linear Regression Example")
+                abline(model, col = "red")
+
+
+
+               
+             
+              
+            </code>
+            <button class="btn">cpoy</button>
+        </li>
+        <li>
+            <code class="code">
+
+                mode<-function (vect){
+                    a<-unique(vect)
+                    a[which.max(tabulate(match(vect,a)))]
+                    }
+                    siz<- as.numeric(readline(prompt = "Enter a size: "))
+                    vect<-c()
+                    for(i in 1:siz){
+                    num<- as.numeric(readline(prompt = "Enter a number: "))
+                    vect<-append(vect,num)
+                    }
+                    vect_mean<-mean(vect)
+                    cat("\n mean of the vector",vect_mean)
+                    #vect_mode<-mode(vect)
+                    vect_median<-median(vect)
+                    cat("\n median of the vector",vect_median)
+                    vect_mode<-mode(vect)
+                    cat("\n mode of the vector",vect_mode)
+               
+             
+              
+            </code>
+            <button class="btn">cpoy</button>
+        </li> -->
+    </ol>
+    <script src="script.js"></script>
+</body>
+</html>
